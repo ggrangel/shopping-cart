@@ -37,7 +37,14 @@
               <tr>
                 <td class="name">Salmon</td>
                 <td class="price">60.00</td>
-                <td class="qty"><input type="number" value="1" /></td>
+                <td class="qty">
+                  <input
+                    type="number"
+                    value="1"
+                    min="1"
+                    oninput="validity.valid||(value='');"
+                  />
+                </td>
                 <td class="subtotal"></td>
                 <td>
                   <button class="btn btn-light btn-sm remove">Remove</button>
@@ -46,7 +53,14 @@
               <tr>
                 <td class="name">Tuna</td>
                 <td class="price">50.00</td>
-                <td class="qty"><input type="number" value="3" /></td>
+                <td class="qty">
+                  <input
+                    type="number"
+                    value="3"
+                    min="1"
+                    oninput="validity.valid||(value='');"
+                  />
+                </td>
                 <td class="subtotal"></td>
                 <td>
                   <button class="btn btn-light btn-sm remove">Remove</button>
@@ -55,7 +69,14 @@
               <tr>
                 <td class="name">Carp</td>
                 <td class="price">40.00</td>
-                <td class="qty"><input type="number" value="2" /></td>
+                <td class="qty">
+                  <input
+                    type="number"
+                    value="2"
+                    min="1"
+                    oninput="validity.valid||(value='');"
+                  />
+                </td>
                 <td class="subtotal"></td>
                 <td>
                   <button class="btn btn-light btn-sm remove">Remove</button>
@@ -64,7 +85,14 @@
               <tr>
                 <td class="name">Pork</td>
                 <td class="price">50.00</td>
-                <td class="qty"><input type="number" value="2" /></td>
+                <td class="qty">
+                  <input
+                    type="number"
+                    value="2"
+                    min="1"
+                    oninput="validity.valid||(value='');"
+                  />
+                </td>
                 <td class="subtotal"></td>
                 <td>
                   <button class="btn btn-light btn-sm remove">Remove</button>
@@ -73,7 +101,14 @@
               <tr>
                 <td class="name">Beef</td>
                 <td class="price">40.00</td>
-                <td class="qty"><input type="number" value="2" /></td>
+                <td class="qty">
+                  <input
+                    type="number"
+                    value="2"
+                    min="1"
+                    oninput="validity.valid||(value='');"
+                  />
+                </td>
                 <td class="subtotal"></td>
                 <td>
                   <button class="btn btn-light btn-sm remove">Remove</button>
@@ -90,7 +125,13 @@
               required
             />
             <input name="price" type="number" placeholder="Price" />
-            <input class="mx-2" name="qty" type="number" placeholder="Qty" />
+            <input
+              class="mx-2"
+              name="qty"
+              type="number"
+              min="1"
+              placeholder="Qty"
+            />
             <button class="btn btn-primary btn-sm">add</button>
           </form>
           <div class="col-12 col-md-6">
