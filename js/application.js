@@ -21,6 +21,14 @@ $(document).ready(function() {
     updateTable();
   });
 
+  var timeout;
+  $(document).on("input", "tr input", function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      updateTable();
+    }, 200);
+  });
+
   $("#addItem").on("submit", function(event) {
     event.preventDefault();
     let name = $(this).children("[name=name]").val();
