@@ -124,7 +124,13 @@
               placeholder="Name"
               required
             />
-            <input name="price" type="number" placeholder="Price" />
+            <input
+              name="price"
+              min="0.01"
+              step="0.01"
+              type="number"
+              placeholder="Price"
+            />
             <input
               class="mx-2"
               name="qty"
