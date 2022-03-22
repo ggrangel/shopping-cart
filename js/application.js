@@ -1,7 +1,7 @@
-let updateTable = function() {
+let updateTable = function () {
   totalPrice = 0;
 
-  $("tbody tr").each(function(__, elem) {
+  $("tbody tr").each(function (__, elem) {
     let price = parseFloat($(elem).children(".price").text());
     let qty = parseInt($(elem).find(".qty input").val());
 
@@ -13,23 +13,23 @@ let updateTable = function() {
   });
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
   updateTable();
 
-  $(".btn.remove").on("click", function(__) {
+  $(document).on("click", ".btn.remove", function (__) {
     $(this).closest("tr").remove();
     updateTable();
   });
 
   var timeout;
-  $(document).on("input", "tr input", function() {
+  $(document).on("input", "tr input", function () {
     clearTimeout(timeout);
-    timeout = setTimeout(function() {
+    timeout = setTimeout(function () {
       updateTable();
     }, 200);
   });
 
-  $("#addItem").on("submit", function(event) {
+  $("#addItem").on("submit", function (event) {
     event.preventDefault();
     let name = $(this).children("[name=name]").val();
     let price = $(this).children("[name=price]").val();
@@ -38,18 +38,18 @@ $(document).ready(function() {
 
     $("tbody").append(
       "<tr>" +
-      '<td class="name">' +
-      name +
-      "</td>" +
-      '<td class="price">' +
-      Number(price).toFixed(2) +
-      "</td>" +
-      '<td class="qty"><input type="number" min="1" value="' +
-      qty +
-      '" /></td>' +
-      '<td class="subtotal"></td>' +
-      '<td><button class="btn btn-light btn-sm remove">Remove</button></td>' +
-      "</tr>"
+        '<td class="name">' +
+        name +
+        "</td>" +
+        '<td class="price">' +
+        Number(price).toFixed(2) +
+        "</td>" +
+        '<td class="qty"><input type="number" min="1" value="' +
+        qty +
+        '" /></td>' +
+        '<td class="subtotal"></td>' +
+        '<td><button class="btn btn-light btn-sm remove">Remove</button></td>' +
+        "</tr>"
     );
     updateTable();
   });
